@@ -561,6 +561,21 @@ export default class ImageViewer extends React.Component<Props, State> {
               maxScale={this.props.maxScale}
             >
               {this!.props!.renderImage!(image.props)}
+              {image.props.renderPlayButton && (
+                <View style={{
+                  zIndex: 1000,
+                  position: 'absolute',
+                  top: '50%',
+                  alignSelf: 'center',
+                  backgroundColor: 'black',
+                  paddingVertical: 10,
+                  paddingHorizontal: 10,
+                }}>
+                  <Text style={{
+                    color: 'white',
+                  }}>Press To Play Video</Text>
+                </View>
+              )}
             </ImageZoom>
           );
         case 'fail':
